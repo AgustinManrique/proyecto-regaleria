@@ -13,7 +13,11 @@ import { Button } from "@/components/ui/button"
 import { Instagram, Facebook } from "lucide-react"
 import Image from "next/image"
 
-export default function EcommercePage() {
+interface EcommercePageProps {
+  searchParams?: { [key: string]: string | string[] | undefined }
+}
+
+export default function EcommercePage({ searchParams }: EcommercePageProps) {
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("all")
   const cart = useCart()
